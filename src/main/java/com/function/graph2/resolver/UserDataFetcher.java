@@ -52,4 +52,11 @@ public class UserDataFetcher {
             return userService.getUsersByEmail(email); // este método lo defines tú
         };
     }
+
+    public DataFetcher<User> getUserByIdFetcher() {
+        return environment -> {
+            Long id = Long.valueOf(environment.getArgument("id"));
+            return userService.getUserById(id);
+        };
+    }
 }

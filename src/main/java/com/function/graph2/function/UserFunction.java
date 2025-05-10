@@ -78,7 +78,8 @@ public class UserFunction {
         RuntimeWiring wiring = RuntimeWiring.newRuntimeWiring()
             .type("Query", builder -> builder
                 // .dataFetcher("getAllUsers", new UserDataFetcher().getAllUsersFetcher())
-                .dataFetcher("getUsersByEmail", new UserDataFetcher().getUsersByEmailFetcher()))
+                .dataFetcher("getUsersByEmail", new UserDataFetcher().getUsersByEmailFetcher())
+                .dataFetcher("getUserById", new UserDataFetcher().getUserByIdFetcher()))
             .type("Mutation", builder -> builder
                 // .dataFetcher("createUser", new UserDataFetcher().createUserFetcher())
                 .dataFetcher("updateUser", new UserDataFetcher().updateUserFetcher())

@@ -1,13 +1,20 @@
+type Role {
+    id: ID!
+    name: String!
+}
+
 type User {
     id: ID!
     name: String!
     email: String!
     password: String!
+    roles: [Role]
 }
 
 type Query {
     getAllUsers: [User]
     getUsersByEmail(email: String!): [User]
+    getUserById(id: ID!): User
 }
 
 type Mutation {
